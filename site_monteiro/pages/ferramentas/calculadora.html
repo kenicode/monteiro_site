@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Tributária | Monteiro Solução Contábil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/calculadora.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho do site (igual ao da página inicial) -->
+    <header id="main-header">
+        <div class="container cabecalho-container">
+            <div class="logo" style="display: flex; align-items: center;">
+                <img src="../../img/logo_monteiro.png" alt="Logo Monteiro Solução Contábil" class="logo-imagem" style="height: 60px; width: auto; margin-right: 16px;">
+                <div class="logo-texto" style="display: flex; flex-direction: column; justify-content: center;">
+                    <span class="nome-empresa" style="font-size: 1.5rem; line-height: 1; text-align: left;">MONTEIRO</span>
+                    <span class="slogan" style="font-size: 1rem; line-height: 1; text-align: left;">Solução Contábil</span>
+                </div>
+            </div>
+            <nav class="menu-navegacao" id="menu-navegacao">
+                <ul>
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="../../index.html#sobre">Sobre</a></li>
+                    <li><a href="../../pages/servicos/servicos.html">Serviços</a></li>
+                    <li><a href="../../pages/ferramentas/ferramentas.html">Ferramentas</a></li>
+                    <li><a href="../../index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="menu-icone" id="menu-icone">
+            <i class="fas fa-bars"></i>
+        </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="container calculadora-container">
+            <h1 class="titulo-secao">Calculadora Tributária</h1>
+            <p class="subtitulo-secao">
+                Auxilia na apuração de tributos como PIS, COFINS, IRPJ, CSLL e ICMS.<br>
+                Insira os valores e selecione o regime tributário para obter os cálculos.
+            </p>
+            <form id="form-calculadora">
+                <div class="input-group">
+                    <label for="empresa">Nome da Empresa (opcional):</label>
+                    <input type="text" id="empresa" class="input-contato">
+                </div>
+                <div class="input-group">
+                    <label for="cnpj">CNPJ (opcional):</label>
+                    <input type="text" id="cnpj" class="input-contato">
+                </div>
+                <div class="input-group">
+                    <label for="receitaBruta">Receita Bruta (R$):</label>
+                    <input type="number" id="receitaBruta" step="0.01" required class="input-contato">
+                </div>
+                <div class="input-group">
+                    <label for="icms">ICMS (R$):</label>
+                    <input type="number" id="icms" step="0.01" required class="input-contato">
+                </div>
+                <div class="input-group">
+                    <label for="icmsSt">ICMS ST (R$):</label>
+                    <input type="number" id="icmsSt" step="0.01" required class="input-contato">
+                </div>
+                <div class="input-group">
+                    <label for="regime">Selecione o Cálculo:</label>
+                    <select id="regime" class="input-contato">
+                        <option value="">Selecione uma opção</option>
+                        <option value="1">PIS e COFINS - Lucro Presumido</option>
+                        <option value="2">PIS e COFINS - Lucro Real</option>
+                        <option value="3">IRPJ e CSLL - Lucro Presumido 15% | 9%</option>
+                        <option value="4">IRPJ e CSLL - Lucro Real 15% | 9%</option>
+                        <option value="5">IRPJ e CSLL - Lucro Real 25% | 12%</option>
+                        <option value="6">ICMS por UF</option>
+                        <option value="7">ICMS ST por CFOP</option>
+                    </select>
+                </div>
+                <div id="ufGroup" class="input-group hidden">
+                    <label for="uf">Selecione a UF:</label>
+                    <select id="uf" class="input-contato">
+                        <option value="1">AC (19%)</option>
+                        <option value="2">AL (20%)</option>
+                        <option value="3">AP (18%)</option>
+                        <option value="4">AM (20%)</option>
+                        <option value="5">BA (20,5%)</option>
+                        <option value="6">CE (18%)</option>
+                        <option value="7">DF (20%)</option>
+                        <option value="8">ES (17%)</option>
+                        <option value="9">GO (19%)</option>
+                        <option value="10">MA (22%)</option>
+                        <option value="11">MT (17%)</option>
+                        <option value="12">MS (17%)</option>
+                        <option value="13">MG (18%)</option>
+                        <option value="14">PA (19%)</option>
+                        <option value="15">PB (20%)</option>
+                        <option value="16">PR (19,5%)</option>
+                        <option value="17">PE (20,5%)</option>
+                        <option value="18">PI (21%)</option>
+                        <option value="19">RJ (22%)</option>
+                        <option value="20">RN (18%)</option>
+                        <option value="21">RS (17%)</option>
+                        <option value="22">RO (19.5%)</option>
+                        <option value="23">RR (20%)</option>
+                        <option value="24">SC (17%)</option>
+                        <option value="25">SP (18%)</option>
+                        <option value="26">SE (20%)</option>
+                        <option value="27">TO (20%)</option>
+                    </select>
+                </div>
+                <div id="cfopGroup" class="input-group hidden">
+                    <label for="cfop">Selecione o CFOP:</label>
+                    <select id="cfop" class="input-contato">
+                        <option value="5102">5102 - Venda dentro do estado (18%)</option>
+                        <option value="5405">5405 - Revenda (20%)</option>
+                        <option value="5949">5949 - Outras operações (17%)</option>
+                    </select>
+                    <label for="mva">MVA (%):</label>
+                    <input type="number" id="mva" step="0.01" class="input-contato">
+                </div>
+                <button type="button" class="botao botao-principal" onclick="calcular()">Calcular Tributos</button>
+            </form>
+            <div id="resultado" class="resultado-calc"></div>
+            <div class="calc-export-buttons">
+                <button id="exportPdf" class="botao botao-secundario hidden" onclick="exportarPDF()"><i class="fas fa-file-pdf"></i> Exportar PDF</button>
+                <button id="exportImg" class="botao botao-secundario hidden" onclick="exportarImagem()"><i class="fas fa-image"></i> Exportar Imagem</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="../../js/calculadora.js"></script>
+    <script src="../../js/main.js"></script>
+
+    <div id="footer-placeholder"></div>
+    <script>
+    fetch('../../footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+    });
+    </script>
+</body>
+</html>

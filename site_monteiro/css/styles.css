@@ -1,0 +1,1147 @@
+/* Estilos Globais */
+:root {
+    --cor-primaria: #175026;
+    --cor-secundaria: #ffffff;
+    --cor-destaque: #faebd7;
+    --cor-texto: #959596;
+    --cor-fundo: #f9f9f9;
+    --cor-pelheta: #a66868;
+}
+@font-face {
+    font-family: 'SQUARE721 BT';
+    src: url('../fontes/SQR721B.TTF') format('truetype');
+}
+@font-face {
+    font-family: 'Cremiline';
+    font-style: normal;
+    src: url('../fontes/Cremiline.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'SQUARE721c';
+    font-style: normal;
+    src: url('../fontes/sqr721c.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SQUARE721c', Arial, sans-serif;
+    font-weight: normal;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    line-height: 1.6;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE e Edge */
+}
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+h1 {
+    font-family: 'AQUARE721 BT', Arial, sans-serif;
+    font-weight: 700;
+    color: var(--cor-primaria);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#main-header {
+    background: var(--cor-primaria, #fff);
+    color: var(--cor-secundaria, #222);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: top 0.4s cubic-bezier(.4,0,.2,1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+}
+
+#main-header.menu-escondido {
+    top: -120px !important;
+}
+
+.cabecalho-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo-imagem {
+    height: 60px;
+    width: auto;
+    margin-right: 16px;
+}
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-texto .nome-empresa {
+    font-size: 1.5rem;
+    line-height: 1;
+    text-align: left;
+    letter-spacing: 1px;
+    color: var(--cor-secundaria);
+    display: block;
+    width: 100%;
+}
+
+.logo-texto .slogan {
+    font-family: 'SQUARE721c', Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1;
+    text-align: left;
+    color: var(--cor-destaque);
+    letter-spacing: 0.20em;
+    margin-top: 2px;
+    display: block;
+    width: 100%;
+}
+
+.logo a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Menu de Navegação */
+.menu-navegacao {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.menu-navegacao ul {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-navegacao li {
+    margin-left: 30px;
+}
+
+.menu-navegacao a {
+    color: var(--cor-secundaria, #fff);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.08rem;
+    transition: color 0.2s;
+}
+
+.menu-navegacao a:hover {
+    color: var(--cor-destaque, #17613a);
+}
+
+.menu-icone {
+    display: none;
+    font-size: 2rem;
+    color: var(--cor-secundaria, #fff);
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* Seções */
+section {
+    min-height: 85vh;         /* Ocupa 85% da altura da tela */
+    display: flex;
+    align-items: center;      /* Centraliza verticalmente o conteúdo */
+    padding: 60px 0;
+    box-sizing: border-box;
+}
+
+section > .container {
+    width: 100%;
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 900px) {
+    section {
+        min-height: unset;
+        padding: 40px 0;
+        display: block;
+    }
+}
+
+section.bg-secundaria {
+    background-color: var(--cor-secundaria);
+}
+
+section.bg-destaque {
+    background-color: var(--cor-destaque);
+}
+
+section.bg-primaria {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+section.bg-primaria .titulo-secao,
+section.bg-primaria .subtitulo-secao,
+section.bg-primaria .conteudo-servico h3,
+section.bg-primaria .conteudo-servico p {
+    color: var(--cor-secundaria);
+}
+
+/* Títulos e Subtítulos */
+.titulo-secao {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: var(--cor-primaria);
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 15px;
+    font-family: 'SQUARE721 BT', Arial, sans-serif;
+}
+.titulo-secao::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--cor-destaque);
+}
+.subtitulo-secao {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #666;
+    font-family: 'SQUARE721 BT', Arial, sans-serif;
+}
+
+/* Seção Destaque */
+.destaque {
+    position: relative;
+    background: url('../img/fundo_desfocado.jpg') no-repeat center/cover;
+    background-size: cover;
+    background-position: center;
+    color: var(--cor-secundaria);
+    text-align: center;
+    padding: 120px 0;
+    background-attachment: fixed;
+
+    
+}
+.destaque::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 4, 4, 0.50);
+    z-index: 0;
+}
+.destaque-conteudo {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+.destaque h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+.destaque p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+.destaque-botoes {
+    margin-top: 20px;
+}
+
+/* Fundo exclusivo para a apresentação da página Serviços: bluor e clara */
+.destaque-servicos {
+    background: none; /* Remove o background direto */
+    position: relative;
+}
+.destaque-servicos::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(to bottom, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.25) 100%),
+        url('../img/mesa_contabil.png') center/cover no-repeat;
+    filter: blur(8px) brightness(1.15);
+    z-index: 0;
+}
+.destaque-servicos .destaque-conteudo {
+    position: relative;
+    z-index: 1;
+}
+
+/* Fundo exclusivo para a apresentação da página Ferramentas */
+.destaque-ferramentas {
+    background: none;
+    position: relative;
+}
+.destaque-ferramentas::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(to bottom, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.25) 100%),
+        url('../img/ferramentas_brancas.png') center/cover no-repeat;
+    filter: blur(8px) brightness(1.15);
+    z-index: 0;
+}
+.destaque-ferramentas .destaque-conteudo {
+    position: relative;
+    z-index: 1;
+}
+
+/* Botões */
+.botao,
+.botao-principal,
+.botao-secundario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px; /* ajuste conforme o seu design */
+    padding: 0 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.5s, color 0.5s, box-shadow 0.5s, border 0.5s, transform 0.5s;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    font-family: 'SQUARE721c', Arial, sans-serif;
+    vertical-align: middle;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.botao-principal {
+    background-color: var(--cor-destaque);
+    color: var(--cor-primaria);
+}
+
+.botao-principal:hover {
+    background-color: #e6d9c0;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.botao-secundario {
+    background-color: transparent;
+    color: var(--cor-destaque);
+    border: 2px solid var(--cor-destaque);
+}
+
+.botao-secundario:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.botao:hover,
+.botao-principal:hover,
+.botao-secundario:hover,
+.ferramentas-conteudo .botao:hover,
+.botao-whatsapp:hover {
+    filter: brightness(0.96) saturate(1.2);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    transition: background 0.4s, color 0.4s, box-shadow 0.4s, border 0.4s, transform 0.4s, filter 0.4s;
+}
+
+/* Botão WhatsApp Fixo */
+.botao-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 200;
+    transition: background 0.5s, color 0.5s, box-shadow 0.5s, transform 0.5s;
+    text-decoration: none;
+}
+
+.botao-whatsapp:hover {
+    background-color: #128c7e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+/* Centralizar e destacar o botão "Acessar Ferramentas" */
+.ferramentas-conteudo .botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 24px auto 0 auto;
+    background: var(--cor-primaria);
+    color: #fff;
+    border: 2px solid var(--cor-primaria);
+    transition: background 0.5s, color 0.5s, border 0.5s, transform 0.5s;
+}
+
+.servicos-bg-imagem {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: (--cor-pelheta);
+    opacity: 0.25;
+    
+    pointer-events: none;
+}
+
+/* Grid dos serviços: 4 cards lado a lado, espaçamento reduzido */
+.grade-servicos {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    width: 100%;
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Grid das ferramentas: 3 por linha em desktop, responsivo */
+.tools-grid.grade-servicos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Cartões de serviço e ferramentas: estilo padronizado */
+.cartao-servico,
+.cartao-blur,
+.tool-card {
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(18px) brightness(1.2);
+    -webkit-backdrop-filter: blur(18px) brightness(1.2);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #1e1e2f;
+    min-width: 0;
+    width: 80%;
+    max-width: 200px;
+    flex: 1 1 0;
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 
+        box-shadow 0.9s cubic-bezier(.4,0,.2,1),
+        transform 0.9s cubic-bezier(.4,0,.2,1),
+        background 0.9s cubic-bezier(.4,0,.2,1);
+}
+
+.cartao-servico:hover,
+.cartao-blur:hover,
+.tool-card:hover {
+    box-shadow: 0 16px 48px 0 rgba(31, 38, 135, 0.25);
+    background: rgba(255,255,255,0.28);
+    transform: translateY(-8px) scale(1.03);
+}
+
+/* Cartão de ferramenta: dimensões padronizadas e alinhamento */
+.tool-card.cartao-servico {
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(18px) brightness(1.2);
+    -webkit-backdrop-filter: blur(18px) brightness(1.2);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #1e1e2f;
+    width: 320px;
+    min-width: 260px;
+    max-width: 340px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 32px 24px;
+    box-sizing: border-box;
+    margin: 0;
+    transition: 
+        box-shadow 0.7s cubic-bezier(.4,0,.2,1),
+        transform 0.7s cubic-bezier(.4,0,.2,1),
+        background 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+/* Ícone centralizado */
+.tool-icon {
+    font-size: 2.5rem;
+    color: var(--cor-primaria);
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+/* Botões das ferramentas com espaçamento maior acima do botão */
+.tool-actions {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Conteúdo do cartão ocupa o espaço disponível */
+.tool-content.conteudo-servico {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+/* Responsivo: 2 por linha em tablets, 1 por linha em mobile */
+@media (max-width: 1100px) {
+    .tools-grid.grade_servicos {
+        gap: 20px;
+    }
+    .tool-card.cartao-servico {
+        width: 48%;
+        min-width: 220px;
+        max-width: 100%;
+    }
+}
+@media (max-width: 700px) {
+    .tools-grid.grade_servicos {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .tool-card.cartao-servico {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+}
+
+/* Responsivo: empilha os cards só em telas pequenas */
+@media (max-width: 1200px) {
+    .grade-servicos {
+        gap: 14px;
+        max-width: 1000px;
+    }
+    .cartao-servico,
+    .cartao-blur,
+    .tool-card {
+        max-width: 220px;
+        padding: 20px 10px;
+    }
+}
+@media (max-width: 900px) {
+    .grade-servicos {
+        flex-wrap: wrap;
+        gap: 12px;
+        max-width: 700px;
+    }
+    .cartao-servico,
+    .cartao-blur,
+    .tool-card {
+        max-width: 48%;
+        flex: 1 1 48%;
+    }
+}
+@media (max-width: 700px) {
+    .grade-servicos {
+        flex-direction: column;
+        gap: 12px;
+        max-width: 100%;
+    }
+    .cartao-servico,
+    .cartao-blur,
+    .tool-card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Ferramentas */
+.ferramentas-conteudo {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.ferramentas-conteudo .botao {
+    display: inline-block;
+    margin: 24px auto 0 auto;
+}
+
+/* Seção Contato */
+.contato-conteudo {
+    margin-top: 30px;
+    align-items: stretch !important;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Padronização dos formulários de contato */
+.form-contato,
+#form-whatsapp {
+    flex: 1 1 340px;
+    max-width: 420px;
+    min-width: 260px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(30,60,120,0.08);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.contato-botoes {
+    flex: 1 1 340px;
+    max-width: 420px;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    height: 100%;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    gap: 0;
+}
+
+.form-contato label,
+#form-whatsapp label {
+    font-weight: 600;
+    color: var(--cor-primaria);
+    margin-bottom: 2px;
+}
+
+.input-contato {
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 1rem;
+    color: #222;
+    background: #fafafa;
+    transition: border 0.3s;
+    outline: none;
+}
+.input-contato:focus {
+    border: 1.5px solid var(--cor-primaria);
+    background: #fff;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .contato-conteudo {
+        flex-direction: column;
+        gap: 28px;
+        align-items: stretch;
+    }
+    .form-contato,
+    #form-whatsapp,
+    .contato-botoes {
+        max-width: 100%;
+        min-width: 0;
+        height: auto;
+    }
+}
+
+/* Rodapé */
+.rodape-conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 0 20px 0;
+}
+
+.rodape-coluna {
+    flex: 1 1 200px;
+    margin: 10px 20px;
+}
+
+.rodape-titulo {
+    font-family: 'SQUARE721c', Arial, sans-serif;
+    font-size: 1.1rem;
+    text-align: left;
+    margin-bottom: 10px;
+    color: var(--cor-primaria);
+    letter-spacing: 1px;
+}
+
+.rodape-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rodape-lista li {
+    margin-bottom: 8px;
+    font-size: 0.98rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.rodape-lista a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.rodape-lista a:hover {
+    color: var(--cor-primaria);
+    text-decoration: underline;
+}
+
+.rodape-fim {
+    text-align: center;
+    padding: 15px 0;
+    color: #888;
+    font-size: 0.95rem;
+    border-top: 1px solid #eee;
+}
+
+/* Títulos e menus */
+.titulo-secao,
+.menu-navegacao a,
+header,
+.logo-texto .nome-empresa {
+    font-family: 'SQUARE721 BT', Arial, sans-serif;
+} 
+
+/* Botões e subtítulos */
+.botao,
+.botao-principal,
+.botao-secundario,
+.subtitulo-secao {
+    font-family: 'SQUARE721c', Arial, sans-serif;
+}
+
+/* Textos dos conteúdos */
+body,
+.sobre-texto,
+.conteudo-servico p,
+.ferramentas-conteudo,
+.contato-conteudo,
+.rodape-conteudo,
+.rodape-coluna,
+.rodape-fim {
+    font-family: 'SQUARE721c' Arial, sans-serif;
+    font-size: 1.10rem;
+}
+
+/* Centralizar e limitar largura do texto da seção Sobre Nós */
+.sobre-texto {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.sobre {
+    position: relative;
+    background: url('../img/sobre-bg.png') no-repeat right bottom;
+    background-size: 340px auto;
+    background-color: var(--cor-secundaria);
+    /* Ajuste o caminho e tamanho conforme necessário */
+    z-index: 1;
+}
+
+.sobre-bg-animada {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.logo-animada {
+    position: absolute;
+    left: 60%;
+    bottom: -200px;
+    width: 220px;
+    opacity: 0.08;
+    animation: subir-logo 18s linear infinite;
+    /* Para efeito aleatório, você pode duplicar o .logo-animada com delays e left diferentes */
+}
+
+@keyframes subir-logo {
+    0% {
+        transform: translateY(0) scale(1) rotate(-5deg);
+        opacity: 0.08;
+    }
+    10% {
+        opacity: 0.12;
+    }
+    80% {
+        opacity: 0.12;
+    }
+    100% {
+        transform: translateY(-120vh) scale(1.08) rotate(7deg);
+        opacity: 0.08;
+    }
+}
+
+/* Fundo com imagem e degradê bluor para a seção de serviços */
+.servicos-bg-blur {
+    position: relative;
+    overflow: hidden;
+}
+.servicos-bg-imagem {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: 
+        linear-gradient(to bottom, rgba(30, 60, 120, 0.7) 0%, rgba(30, 60, 120, 0.3) 80%, rgba(255,255,255,0.1) 100%),
+        url('../img/mesa_contabil.png') center/cover no-repeat;
+    filter: blur(8px);
+    z-index: 1;
+    pointer-events: none;
+}
+.servicos-bg-blur > .container {
+    position: relative;
+    z-index: 2;
+}
+.titulos-cartoes {
+    font-family: 'SQUARE721 BT', Arial, sans-serif;
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+    margin: 0 auto;
+    position: left;
+    z-index: 3;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Cartões de serviço transparentes com blur mais forte */
+.cartao-blur,
+.servicos .cartao-servico {
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(18px) brightness(1.2);
+    -webkit-backdrop-filter: blur(18px) brightness(1.2);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #1e1e2f;
+    transition: box-shadow 0.3s;
+}
+.cartao-blur:hover,
+.servicos .cartao-servico:hover {
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+}
+
+/* Para garantir que os cartões fiquem transparentes e com destaque */
+.grade-servicos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+}
+.cartao-servico {
+    min-width: 260px;
+    max-width: 320px;
+    flex: 1 1 260px;
+    padding: 32px 24px;
+    margin: 0 8px 24px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* O efeito de blur e transparência já está acima */
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .grade-servicos {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .cartao-servico {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.cartao-titulo {
+
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--cor-pelheta, #1e3c78);
+    margin-bottom: 10px;
+    margin-top: 0;
+    letter-spacing: 0.01em;
+}
+
+.cartao-texto {
+    font-size: 1rem;
+    color: var(--cor-texto, #333);
+    margin-bottom: 18px;
+    margin-top: 0;
+    line-height: 1.6;
+}
+
+.titulo-servicos {
+    color: var(--cor-pelheta); /* Ou qualquer cor que desejar */
+}
+
+/* Cartões de serviços verticais e largos */
+.grade-servicos-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+}
+
+.cartao-servico-vertical {
+    width: 100%;
+    max-width: 900px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 40px 32px;
+    text-decoration: none;
+    transition: box-shadow 0.7s, background 0.7s, transform 0.7s;
+    cursor: pointer;
+    display: block;
+}
+
+.cartao-servico-vertical .cartao-titulo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--cor-pelheta, #1e3c78);
+    margin-bottom: 18px;
+}
+
+.cartao-servico-vertical .cartao-lista {
+    margin: 0;
+    padding-left: 18px;
+    color: var(cor) #222;
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+.cartao-servico-vertical:hover {
+    background: rgba(255,255,255,0.28);
+    box-shadow: 0 16px 48px 0 rgba(31, 38, 135, 0.18);
+    transform: translateY(-4px) scale(1.01);
+    text-decoration: none;
+}
+
+/* Remove a imagem de fundo da seção de serviços só na página servicos.html */
+.servicos-bg-sem-imagem .servicos-bg-imagem {
+    background: var(--cor-secundaria); /* Ou outra cor desejada */
+    filter: none;
+    opacity: 1;
+}
+
+/* Cores específicas para os cartões de ferramenta */
+.tool-card.cartao-servico h3 {
+    color: var(--cor-primaria);
+}
+
+.tool-card.cartao-servico p {
+    color: var(--cor-texto);
+}
+#main-header {
+    background: var(--cor-primaria, #fff);
+    color: var(--cor-secundaria, #222);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: top 0.4s cubic-bezier(.4,0,.2,1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+}
+
+#main-header.menu-escondido {
+    top: -120px !important;
+}
+
+.cabecalho-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 20px;
+}
+
+.logo-imagem {
+    height: 30px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu-navegacao {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.menu-navegacao ul {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-navegacao a {
+    font-family: 'SQUARE721c';
+    color: var(--cor-secundaria, #fff);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.08rem;
+    transition: color 0.2s;
+}
+
+.menu-navegacao a:hover {
+    color: var(--cor-destaque, #dfee9d);
+}
+
+/* Adicione ao seu styles.css */
+.calculadora-apresentacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    margin: 48px 0;
+}
+
+.folha-flutuante-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 340px;
+    height: 440px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(30,93,59,0.10), 0 2px 8px rgba(30,93,59,0.06);
+    padding: 16px;
+}
+
+.folha-flutuante {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(30,93,59,0.08);
+    background: #fff;
+    display: block;
+}
+
+.apresentacao-texto {
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+@media (max-width: 900px) {
+    .calculadora-apresentacao {
+        flex-direction: column;
+        gap: 32px;
+    }
+    .folha-flutuante-container {
+        width: 90vw;
+        max-width: 340px;
+        height: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .menu-navegacao ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: var(--cor-primaria, #1e5d3b);
+        flex-direction: column;
+        width: 70vw;
+        max-width: 320px;
+        height: auto;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+        display: none;
+        padding: 24px 0;
+        z-index: 200;
+        border-radius: 0 0 0 16px;
+    }
+    .menu-navegacao ul.menu-aberto {
+        display: flex;
+    }
+    .menu-icone {
+        display: block;
+    }
+    .menu-navegacao {
+        flex: 1;
+        justify-content: flex-end;
+    }
+    .cabecalho-container {
+        position: relative;
+    }
+}
+@media (max-width: 700px) {
+    .container {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+    /* Se necessário, ajuste também o body */
+    body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
