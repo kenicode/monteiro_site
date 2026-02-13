@@ -54,12 +54,6 @@ monteiro-solucao-contabil-completo/
    http://localhost:3000
    ```
 
-## Credenciais de Acesso Administrativo
-
-Para fins de teste, utilize as seguintes credenciais:
-- Email: admin@contabilmonteiro.com.br
-- Senha: L1b3rd4d3@
-
 **Importante:** Estas credenciais são apenas para testes e não devem ser compartilhadas publicamente.
 
 ## Tecnologias Utilizadas
